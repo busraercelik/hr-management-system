@@ -14,8 +14,10 @@ public class Employee extends User{
 	@Id
 	@Column(name = "user_id")
 	private int id;
+	
 	@Column(name = "employee_name")
 	private String fname;
+	
 	@Column(name = "employee_surname")
 	private String lname;
 }
