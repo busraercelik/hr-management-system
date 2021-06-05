@@ -20,8 +20,6 @@ import lombok.RequiredArgsConstructor;
 @PrimaryKeyJoinColumn(name = "user_id")
 public class Employer extends User{
 	
-
-	
 	@Column(name = "company_name")
 	private String companyName;
 	
