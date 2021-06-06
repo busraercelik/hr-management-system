@@ -10,4 +10,8 @@ public interface EmployerService {
 	Result addEmployer(Employer employer);
 	
 	DataResult<List<Employer>> getAllEmployers();
+	
+	Result isEmployerExist(int id);
+	
+	Employer findById(int id);
 }

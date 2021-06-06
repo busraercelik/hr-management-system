@@ -16,12 +16,4 @@ public class UserValidator {
 		return new SuccessResult();
 	}
 	
-	/*
-	public static Result run(Result firstNameChecker, Result lastNameChecker, boolean realPerson, Result idChecker,
-			Result birthDateChecker, Result emailNullChecker, Result realEmail, Result passwordNullChecker,
-			Result mailRegistered) {
-		
-		return new Result(realPerson);
-	}
-*/
 }

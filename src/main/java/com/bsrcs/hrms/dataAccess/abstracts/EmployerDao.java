@@ -6,5 +6,5 @@ import com.bsrcs.hrms.entities.concretes.Employer;
 
 @Repository
 public interface EmployerDao extends JpaRepository<Employer, Integer>{
-
+	
 }

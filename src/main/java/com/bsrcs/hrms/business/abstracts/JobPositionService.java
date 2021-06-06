@@ -10,4 +10,8 @@ public interface JobPositionService {
 	DataResult<List<JobPosition>> getAllJobPositons();
 	
 	Result addJobPosition(JobPosition jobPosition);
+	
+	Result isJobPositionExist(int id);
+	
+	JobPosition findById(int id);
 }

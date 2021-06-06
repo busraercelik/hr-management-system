@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 import com.bsrcs.hrms.business.abstracts.JobPositionService;
 import com.bsrcs.hrms.core.utilities.constants.RegistrationConstants;
 import com.bsrcs.hrms.core.utilities.results.DataResult;
+import com.bsrcs.hrms.core.utilities.results.ErrorResult;
 import com.bsrcs.hrms.core.utilities.results.Result;
 import com.bsrcs.hrms.core.utilities.results.SuccessDataResult;
 import com.bsrcs.hrms.core.utilities.results.SuccessResult;
@@ -34,5 +35,21 @@ public class JobPositionManager implements JobPositionService{
 		jobDao.save(jobPosition);
 		return new SuccessResult(RegistrationConstants.registrationAndVerificationCode);
 	}
+
+	@Override
+	public Result isJobPositionExist(int id) {
+		
+		if (jobDao.existsById(id)) {
+			return new SuccessResult();
+		}
+		return new ErrorResult("Job Position does not exist!");
+	}
+
+	@Override
+	public JobPosition findById(int id) {
+		return jobDao.findById(id).orElse(null);
+	}
+	
+	
 
 }

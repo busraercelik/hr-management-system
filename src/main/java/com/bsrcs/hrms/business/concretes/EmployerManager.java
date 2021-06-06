@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 import com.bsrcs.hrms.business.abstracts.EmployerService;
 import com.bsrcs.hrms.core.utilities.constants.RegistrationConstants;
 import com.bsrcs.hrms.core.utilities.results.DataResult;
+import com.bsrcs.hrms.core.utilities.results.ErrorResult;
 import com.bsrcs.hrms.core.utilities.results.Result;
 import com.bsrcs.hrms.core.utilities.results.SuccessDataResult;
 import com.bsrcs.hrms.core.utilities.results.SuccessResult;
@@ -39,5 +40,20 @@ public class EmployerManager implements EmployerService {
 
 		return temp[1];
 	}
+	
+	@Override
+	public Result isEmployerExist(int id) {
+		
+		if (employerDao.existsById(id)) {
+			return new SuccessResult();
+		}
+		return new ErrorResult("Employer doesnot exist!");
+	}
+
+	@Override
+	public Employer findById(int id) {
+		return employerDao.findById(id).orElse(null);
+	}
+
 
 }

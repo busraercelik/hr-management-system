@@ -9,6 +9,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -27,6 +29,7 @@ public class EmailVerificationCode {
 	private int id;
 	
 	@Column(name = "created_time")	
+	@JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
 	private Date createdTime;
 	
 	// random, unique String which is generated in the registration process

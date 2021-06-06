@@ -14,7 +14,7 @@ import com.bsrcs.hrms.core.utilities.results.DataResult;
 import com.bsrcs.hrms.entities.concretes.JobPosition;
 
 @RestController
-@RequestMapping(name = "jobtitle/")
+@RequestMapping(value = "jobtitle/")
 public class JobPositionController {
 	
 	private final JobPositionService jobPositionService;
@@ -23,7 +23,7 @@ public class JobPositionController {
 		this.jobPositionService = jobPositionService;
 	}
 	
-	@GetMapping(name = "getAllJobTitles")
+	@GetMapping(value = "getAllJobTitles")
 	DataResult<List<JobPosition>> getAllJobPositons() {
 		return jobPositionService.getAllJobPositons();
 	}
