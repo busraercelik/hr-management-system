@@ -3,6 +3,7 @@ package com.bsrcs.hrms.business.concretes;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
 import com.bsrcs.hrms.business.abstracts.CityService;
@@ -93,5 +94,12 @@ public class JobAdvertisementManager implements JobAdvertisementService {
 		}
 		
 		return new SuccessResult();
+	}
+
+	@Override
+	public DataResult<List<ActiveJobAdvertisementDTO>> findActiveJobsSortedByDate() {
+		List<ActiveJobAdvertisementDTO> activeJobAdvertisementDTOs =
+					advertisementDao.findAllByIsActiveAndOrderByDate();
+		return new SuccessDataResult<List<ActiveJobAdvertisementDTO>>(activeJobAdvertisementDTOs);
 	}
 }

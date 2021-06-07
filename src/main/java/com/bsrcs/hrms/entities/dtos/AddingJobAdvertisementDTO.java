@@ -23,4 +23,5 @@ public class AddingJobAdvertisementDTO {
 	private Double minSalary;
 	private Double maxSalary;
 	private LocalDate applicationDeadline;
+	private String noOfOpenPosition;
 }

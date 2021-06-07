@@ -40,4 +40,9 @@ public class JobAdvertisementController {
 	public Result addJobAdvertisementByEmployer(@RequestBody @Valid AddingJobAdvertisementDTO dto) {
 		return advertisementService.addJobAdvertisementByEmployer(dto);
 	}
+	
+	@GetMapping(value = "sortActiveJobs")
+	DataResult<List<ActiveJobAdvertisementDTO>> findActiveJobsSortedByDate() {
+		return advertisementService.findActiveJobsSortedByDate();
+	}
 }

@@ -12,4 +12,6 @@ public interface JobAdvertisementService {
 	Result addJobAdvertisementByEmployer(AddingJobAdvertisementDTO advertisementDTO);
 	
 	DataResult<List<ActiveJobAdvertisementDTO>> findAllByIsActive();
+	
+	DataResult<List<ActiveJobAdvertisementDTO>> findActiveJobsSortedByDate();
 }
