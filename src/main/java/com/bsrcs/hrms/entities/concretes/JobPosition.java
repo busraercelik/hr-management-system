@@ -19,7 +19,8 @@ import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import lombok.Setter;
 
-@Data
+@Getter
+@Setter
 @RequiredArgsConstructor
 @AllArgsConstructor
 @Entity
@@ -36,4 +37,11 @@ public class JobPosition {
 	
 	@OneToMany(mappedBy = "jobPosition",cascade=CascadeType.ALL)
 	private List<JobAdvertisement> jobAdvertisement;
+
+	@Override
+	public String toString() {
+		return "JobPosition [id=" + id + ", jobTitle=" + jobTitle + "]";
+	}
+	
+	
 }

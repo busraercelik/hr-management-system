@@ -37,4 +37,11 @@ public class City {
 	
 	@OneToMany(mappedBy = "city",cascade=CascadeType.ALL)
 	private List<JobAdvertisement> jobAdvertisements;
+
+	@Override
+	public String toString() {
+		return "City [id=" + id + ", cityName=" + cityName + "]";
+	}
+	
+	
 }

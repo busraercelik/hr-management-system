@@ -1,13 +1,13 @@
 package com.bsrcs.hrms.business.concretes;
 
-import java.util.Optional;
-
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import com.bsrcs.hrms.business.abstracts.CityService;
 import com.bsrcs.hrms.dataAccess.abstracts.CityDao;
 import com.bsrcs.hrms.entities.concretes.City;
 
+@Service
 public class CityManager implements CityService{
 
 	private CityDao cityDao;
