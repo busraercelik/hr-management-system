@@ -47,7 +47,7 @@ public class JobAdvertisement {
 	private LocalDate applicationDeadline;
 	
 	@Column(name = "is_active")
-	private boolean isActive;
+	private boolean isActive = true;
 	
 	@ManyToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name = "city_id")

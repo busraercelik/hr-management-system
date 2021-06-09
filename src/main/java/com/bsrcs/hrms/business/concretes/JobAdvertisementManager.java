@@ -102,4 +102,17 @@ public class JobAdvertisementManager implements JobAdvertisementService {
 					advertisementDao.findAllByIsActiveAndOrderByDate();
 		return new SuccessDataResult<List<ActiveJobAdvertisementDTO>>(activeJobAdvertisementDTOs);
 	}
+
+	@Override
+	public DataResult<List<JobAdvertisement>> findByCompanyAndActive(String companyName) {
+		return new SuccessDataResult(advertisementDao.findAllByIsActiveTrueAndEmployer_CompanyNameContainsIgnoreCase(companyName));
+	}
+
+	@Override
+	public Result switchActiveJobToPassive(int id) {
+		JobAdvertisement advertisement = advertisementDao.getOne(id);
+		advertisement.setActive(false);
+		advertisementDao.save(advertisement);
+		return new SuccessResult();
+	}
 }

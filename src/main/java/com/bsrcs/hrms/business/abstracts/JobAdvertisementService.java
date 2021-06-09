@@ -14,4 +14,8 @@ public interface JobAdvertisementService {
 	DataResult<List<ActiveJobAdvertisementDTO>> findAllByIsActive();
 	
 	DataResult<List<ActiveJobAdvertisementDTO>> findActiveJobsSortedByDate();
+	
+	DataResult<List<JobAdvertisement>> findByCompanyAndActive(String companyName);
+	
+	Result switchActiveJobToPassive(int id);
 }

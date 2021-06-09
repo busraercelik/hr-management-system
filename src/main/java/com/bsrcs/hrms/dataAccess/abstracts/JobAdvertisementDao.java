@@ -27,4 +27,7 @@ public interface JobAdvertisementDao extends JpaRepository<JobAdvertisement, Int
 	List<ActiveJobAdvertisementDTO> findAllByIsActive();
 	
 	
+	List<JobAdvertisement> findAllByIsActiveTrueAndEmployer_CompanyNameContainsIgnoreCase(String companyName);
+	
+	
 }
