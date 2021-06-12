@@ -1,4 +1,4 @@
-package com.bsrcs.hrms.entities.concretes;
+package com.bsrcs.hrms.entities.concretes.local;
 
 import java.util.List;
 
@@ -11,6 +11,7 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+import com.bsrcs.hrms.entities.concretes.JobAdvertisement;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import lombok.AllArgsConstructor;
@@ -24,7 +25,7 @@ import lombok.Setter;
 @NoArgsConstructor 
 @Entity
 @Table(name = "cities")
-@JsonIgnoreProperties({"hibernateLazyInitializer","handler","jobAdvertisement"})
+@JsonIgnoreProperties({"hibernateLazyInitializer","handler","jobAdvertisements"})
 public class City {
 	
 	@Id

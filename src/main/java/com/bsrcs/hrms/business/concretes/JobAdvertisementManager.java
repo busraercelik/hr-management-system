@@ -6,10 +6,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
-import com.bsrcs.hrms.business.abstracts.CityService;
 import com.bsrcs.hrms.business.abstracts.EmployerService;
 import com.bsrcs.hrms.business.abstracts.JobAdvertisementService;
 import com.bsrcs.hrms.business.abstracts.JobPositionService;
+import com.bsrcs.hrms.business.abstracts.local.CityService;
 import com.bsrcs.hrms.core.utilities.results.DataResult;
 import com.bsrcs.hrms.core.utilities.results.ErrorResult;
 import com.bsrcs.hrms.core.utilities.results.Result;
@@ -19,11 +19,11 @@ import com.bsrcs.hrms.core.utilities.validations.UserValidator;
 import com.bsrcs.hrms.dataAccess.abstracts.EmployerDao;
 import com.bsrcs.hrms.dataAccess.abstracts.JobAdvertisementDao;
 import com.bsrcs.hrms.dataAccess.abstracts.UserDao;
-import com.bsrcs.hrms.entities.concretes.City;
 import com.bsrcs.hrms.entities.concretes.Employer;
 import com.bsrcs.hrms.entities.concretes.JobAdvertisement;
 import com.bsrcs.hrms.entities.concretes.JobPosition;
 import com.bsrcs.hrms.entities.concretes.User;
+import com.bsrcs.hrms.entities.concretes.local.City;
 import com.bsrcs.hrms.entities.dtos.ActiveJobAdvertisementDTO;
 import com.bsrcs.hrms.entities.dtos.AddingJobAdvertisementDTO;
 
@@ -68,11 +68,11 @@ public class JobAdvertisementManager implements JobAdvertisementService {
 		
 		JobAdvertisement advertisement = new JobAdvertisement();
 		Employer employer = employerService.findById(advertisementDTO.getEmployerId());
-		City city = cityService.findById(advertisementDTO.getCityId());
+		DataResult<City> city = cityService.findById(advertisementDTO.getCityId());
 		JobPosition jobPosition = jobPositionService.findById(advertisementDTO.getJobId());
 		
 		advertisement.setEmployer(employer);
-		advertisement.setCity(city);
+		advertisement.setCity(city.getData());
 		advertisement.setJobPosition(jobPosition);
 		
 		advertisement.setMinSalary(advertisementDTO.getMinSalary());
