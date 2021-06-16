@@ -11,7 +11,10 @@ import com.bsrcs.hrms.core.utilities.results.SuccessDataResult;
 import com.bsrcs.hrms.dataAccess.abstracts.local.LanguageDao;
 import com.bsrcs.hrms.entities.concretes.local.Language;
 
+import lombok.extern.log4j.Log4j2;
+
 @Service
+@Log4j2
 public class LanguageManager implements LanguageService{
 
 	private LanguageDao dao;
@@ -23,7 +26,13 @@ public class LanguageManager implements LanguageService{
 
 	@Override
 	public DataResult<List<Language>> findAllLanguages() {
-		return new SuccessDataResult<List<Language>>(dao.findAll());
+		return new SuccessDataResult<>(dao.findAll());
+	}
+
+	@Override
+	public boolean existsById(int id) {
+		log.info("ExistsBYId Result: "+dao.existsById(id));
+		return dao.existsById(id);
 	}
 
 	

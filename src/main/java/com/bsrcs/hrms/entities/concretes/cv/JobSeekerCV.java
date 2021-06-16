@@ -34,7 +34,7 @@ public class JobSeekerCV {
 	
 	private String photoLink;
 	
-	private boolean isActive;
+	private boolean isActive = true;
 	
 	@OneToMany(cascade = CascadeType.ALL, mappedBy = "jobSeekerCV")
 	@JsonIgnoreProperties("jobSeekerCV")

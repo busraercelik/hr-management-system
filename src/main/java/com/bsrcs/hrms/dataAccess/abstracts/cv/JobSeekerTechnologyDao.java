@@ -11,4 +11,8 @@ public interface JobSeekerTechnologyDao extends JpaRepository<JobSeekerTechnolog
 	
 	@Query("FROM JobSeekerTechnology jst where jst.id=:id and jst.technologyName=:technologyName")
 	List<JobSeekerTechnology> orderAllByLeavingDate(int id, String technologyName);
+	
+	List<JobSeekerTechnology> findAllByJobSeekerCVId(int id);
+	
+	boolean existsByJobSeekerCVIdAndTechnologyName(int id, String technologyName);
 }

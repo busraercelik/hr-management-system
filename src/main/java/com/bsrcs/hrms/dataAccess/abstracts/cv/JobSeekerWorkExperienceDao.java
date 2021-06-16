@@ -14,4 +14,6 @@ public interface JobSeekerWorkExperienceDao extends JpaRepository<JobSeekerWorkE
 	@Query("FROM JobSeekerWorkExperience jse where jse.id=:id "
 			+ "ORDER BY jse.leavingDate DESC")
 	List<JobSeekerWorkExperience> findByJobSeekerCvIdOrderByLeavingDateDesc(int id);
+	
+	List<JobSeekerWorkExperience> findAllByJobSeekerCVId(int id);
 }	

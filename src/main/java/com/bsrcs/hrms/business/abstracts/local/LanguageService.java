@@ -7,4 +7,6 @@ import com.bsrcs.hrms.entities.concretes.local.Language;
 
 public interface LanguageService {
 	DataResult<List<Language>> findAllLanguages();
+	
+	boolean existsById(int id);
 }
