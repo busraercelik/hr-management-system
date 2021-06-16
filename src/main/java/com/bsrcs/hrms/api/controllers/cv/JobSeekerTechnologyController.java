@@ -18,7 +18,7 @@ import com.bsrcs.hrms.business.abstracts.cv.JobSeekerTechnologyService;
 import com.bsrcs.hrms.core.utilities.results.DataResult;
 import com.bsrcs.hrms.core.utilities.results.Result;
 import com.bsrcs.hrms.entities.concretes.cv.JobSeekerTechnology;
-import com.bsrcs.hrms.entities.dtos.JobSeekerEducationAddDTO;
+import com.bsrcs.hrms.entities.dtos.JobSeekerTechnologyAddDTO;
 
 @RestController
 @RequestMapping(value = "jobseeker-technology")
@@ -32,7 +32,7 @@ public class JobSeekerTechnologyController {
 	}
 	
 	@PostMapping("/addTechnology")
-	public ResponseEntity<Result> addTechnology(@RequestBody @Valid JobSeekerEducationAddDTO educationAddDTO) {
+	public ResponseEntity<Result> addTechnology(@RequestBody @Valid JobSeekerTechnologyAddDTO educationAddDTO) {
 		return new ResponseEntity<>(technologyService.addTechnology(educationAddDTO), HttpStatus.OK);
 	}
 	

@@ -11,7 +11,7 @@ import lombok.NoArgsConstructor;
 
 @Data
 @NoArgsConstructor
-public class JobSeekerEducationAddDTO {
+public class JobSeekerTechnologyAddDTO {
 
 	@Size(min = 1, max = 100)
 	@NotNull

@@ -6,10 +6,10 @@ import com.bsrcs.hrms.core.utilities.results.DataResult;
 import com.bsrcs.hrms.core.utilities.results.Result;
 import com.bsrcs.hrms.entities.concretes.cv.JobSeekerEducation;
 import com.bsrcs.hrms.entities.concretes.cv.JobSeekerTechnology;
-import com.bsrcs.hrms.entities.dtos.JobSeekerEducationAddDTO;
+import com.bsrcs.hrms.entities.dtos.JobSeekerTechnologyAddDTO;
 
 public interface JobSeekerTechnologyService {
-	Result addTechnology(JobSeekerEducationAddDTO educationAddDTO);
+	Result addTechnology(JobSeekerTechnologyAddDTO educationAddDTO);
 	
 	DataResult<List<JobSeekerTechnology>> getAllEducationOfJobSeeker(int id);
 	

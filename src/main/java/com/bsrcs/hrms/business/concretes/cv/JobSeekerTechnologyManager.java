@@ -16,7 +16,7 @@ import com.bsrcs.hrms.core.utilities.validations.UserValidator;
 import com.bsrcs.hrms.dataAccess.abstracts.cv.JobSeekerTechnologyDao;
 import com.bsrcs.hrms.entities.concretes.cv.JobSeekerEducation;
 import com.bsrcs.hrms.entities.concretes.cv.JobSeekerTechnology;
-import com.bsrcs.hrms.entities.dtos.JobSeekerEducationAddDTO;
+import com.bsrcs.hrms.entities.dtos.JobSeekerTechnologyAddDTO;
 
 @Service
 public class JobSeekerTechnologyManager implements JobSeekerTechnologyService{
@@ -34,7 +34,7 @@ public class JobSeekerTechnologyManager implements JobSeekerTechnologyService{
 	}
 
 	@Override
-	public Result addTechnology(JobSeekerEducationAddDTO educationAddDTO) {
+	public Result addTechnology(JobSeekerTechnologyAddDTO educationAddDTO) {
 		Result cvResult = businessRuleService
 						.checkBooleanVal(jobSeekerTechnologyDao
 						.existsById(educationAddDTO.getJobSeekerCVId()), "No cv found by given id");
